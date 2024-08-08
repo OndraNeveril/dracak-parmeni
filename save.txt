@@ -1,9 +1,8 @@
-Fritol 3
-sila 11
-inteligence 20
-obrana 4
-zivoty 76
-penize 50
-pivo 2
-trava 2
-Slim Pepin Plíšek 
+Fritol 1
+sila 0
+inteligence 0
+obrana 0
+zivoty 0
+penize 0
+pivo 0
+trava 0

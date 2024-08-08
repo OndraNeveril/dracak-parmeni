@@ -426,26 +426,26 @@ def Fritol2(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
     print(' Utratil jsi', p, 'Zbylo ti', peníze)
     print('máš', tráva, 'trávy a ', pivo,'piva')
 
-    if peníze >= 20:
-       print('Zbyly ti ještě nějaké peníze, můžeš si koupit pivo nebo trávu, každé stojí 50')
+    if peníze >= 25:
+       print('Zbyly ti ještě nějaké peníze, můžeš si koupit pivo nebo trávu, každé stojí 25')
    
        while True:
        
-           if peníze >= 20:
+           if peníze >= 25:
    
                nákup = input('Co si koupíš?\na) pivo\nb) trávu\nc) nic\n')
    
                if nákup == 'a':
                    print('Pivo + 1\nPeníze - 20')
                    pivo += 1
-                   peníze -= 20
+                   peníze -= 25
        
                elif nákup == 'b':
                    print('Tráva + 1\nPeníze - 20')
                    tráva += 1
-                   peníze -= 20
+                   peníze -= 25
        
-               elif nákup == 'c' or peníze <= 19:
+               elif nákup == 'c' or peníze <= 24:
                     break
                
            else: break
@@ -947,23 +947,24 @@ def Fritol3(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
            print('Podařilo se ti utéct.')
        
     if problem:
-       print('Utíkáš pryč od vředů k řece.')
-       if "Plíšek" in pratele and "Pepin" in pratele:
-           if input('Potkal jsi Plíška s Pepinem a říkají ti, ať jdeš za nimi, že mají jídlo\na) Ne, nemám čas, jdu pryč\nb) Rychle, vemte jídlo s sebou, spěcháme\n') == 'b':
-               print('Plíšek a Pepin si pospíší s tebou')
-           else:
-               print('Opustíš Plíška a Pepina')
-               pratele.remove("Plíšek")
-               pratele.remove("Pepin")
-       print('Nasedneš do lodičky.')
-       if "Slim" in pratele:
-           if input('Potkáš Slima a říká ti ať neutíkáš, že pojede s tebou\na) Odprejskni, plav pryč\nb) Pojď sem má lásko') == 'b':
-               print('Slim nasedl do loďky')
-           else:
-               print('Slim plave pryč')
-               pratele.remove("Slim")
 
-    print('Spolu s ostatními jste vyrazili na pařbu\nDošli jste do Nádoru, ukazal jsi vstupenku a pustili vás na pařbu')
+        print('Utíkáš pryč od vředů k řece.')
+        if "Plíšek" in pratele and "Pepin" in pratele:
+            if input('Potkal jsi Plíška s Pepinem a říkají ti, ať jdeš za nimi, že mají jídlo\na) Ne, nemám čas, jdu pryč\nb) Rychle, vemte jídlo s sebou, spěcháme\n') == 'b':
+                print('Plíšek a Pepin si pospíší s tebou')
+            else:
+                print('Opustíš Plíška a Pepina')
+                pratele.remove("Plíšek")
+                pratele.remove("Pepin")
+        print('Nasedneš do lodičky.')
+        if "Slim" in pratele:
+            if input('Potkáš Slima a říká ti ať neutíkáš, že pojede s tebou\na) Odprejskni, plav pryč\nb) Pojď sem má lásko\n') == 'b':
+                print('Slim nasedl do loďky')
+            else:
+                print('Slim plave pryč')
+                pratele.remove("Slim")
+
+    print('Spolu s ostatními jste vyrazili na pařbu\nDošli jste do Nádoru, ukázal jsi vstupenku a pustili vás na pařbu')
     if inteligence >= 20:
        print('Roztavil jsi ringiuše, vydělal sis na hulení\npeníze + 1000')
        peníze += 1000

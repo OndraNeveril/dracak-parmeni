@@ -48,6 +48,7 @@ if postava == 'Fritol':
         pivo = 1
         tráva = 1
         životy = 100
+        pratele = []
 
         síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele = Fritol.Fritol1(síla, inteligence, obrana, životy, peníze, pivo, tráva,pratele)
         if input() != 'Exit':
