@@ -14,7 +14,7 @@ if hra == "a":
     postava = s[0]
     tah = int(s[1])
     q = [i.split(" ") for i in p]
-    síla, inteligence, obrana, životy, peníze, pivo, tráva = None, None, None, None, None, None, None
+    síla, inteligence, obrana, životy, peníze, pivo, tráva, magie = 0,0,0,0,0,0,0,0
     pratele = q[-1]
     for j in q:
         if j[0] == "sila":
@@ -38,6 +38,9 @@ if hra == "a":
         if j[0] == "trava":
             tráva = int(j[1])
 
+        if j[0] == "magie":
+            magie = int(j[1])
+
 if postava == 'Fritol':
     import Fritol
     if tah == 1:
@@ -59,21 +62,31 @@ if postava == 'Fritol':
             tah += 1
     if tah == 3:
         síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele = Fritol.Fritol3(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
-        pass
     tah += 1
 
 if postava == 'Smajdalf':
     import Smajdalf
     if tah == 1:
-        Smajdalf.Smajdalf1()
+
+        síla = 8
+        inteligence = 10
+        obrana = 2
+        peníze = 200
+        pivo = 1
+        tráva = 1
+        životy = 100
+        magie = 3
+        pratele = []
+
+        síla, inteligence, obrana, životy, peníze, pivo, tráva,magie, pratele = Smajdalf.Smajdalf1(síla, inteligence, obrana, životy, peníze, pivo, tráva,magie, pratele)
         if input() != 'Exit':
             tah += 1
     if tah == 2:
-        Smajdalf.Smajdalf2()
+        síla, inteligence, obrana, životy, peníze, pivo, tráva,magie, pratele = Smajdalf.Smajdalf2(síla, inteligence, obrana, životy, peníze, pivo, tráva,magie, pratele)
         if input() != 'Exit':
             tah += 1
     if tah == 3:
-        Smajdalf.Smajdalf3()
+        síla, inteligence, obrana, životy, peníze, pivo, tráva,magie, pratele = Smajdalf.Smajdalf3(síla, inteligence, obrana, životy, peníze, pivo, tráva,magie, pratele)
     tah += 1
 
 if postava == 'Bimbo':
@@ -103,9 +116,9 @@ fileout.write('\nobrana' + ' ' + str(obrana))
 fileout.write('\nzivoty' + ' ' + str(životy))
 fileout.write('\npenize' + ' ' + str(peníze))
 fileout.write('\npivo' + ' ' + str(pivo))
-fileout.write('\ntrava' + ' ' + str(tráva) + "\n")
+fileout.write('\ntrava' + ' ' + str(tráva))
+fileout.write('\nmagie' + ' ' + str(magie) + "\n")
 for i in pratele:
     fileout.write(i + " ")
-print(pratele)
 print('Nyní hru můžete vypnout stisknutím klávesy enter')
 input()

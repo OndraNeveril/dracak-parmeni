@@ -295,6 +295,10 @@ def Fritol1(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
     if 'Plíšek' in pratele and 'Pepin' in pratele:
        print('Plíšek s Pepinem běží a vrazili do tebe. Všichni jste se skutáleli ze srázu dolů na cestu.\nŽivoty - 10')
        životy -= 10
+       if životy >= 0:
+           input()
+           while True:
+               print('Umřel jsi, konec hry!')
 
     else:
        print('pomalu sejdete dolů rovnou na cestu.')
@@ -738,11 +742,10 @@ def Fritol3(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
     else:
        print('Veverky vás napadly\nživoty - 10')
        životy -= 10
-
-    if životy <= 0:
-        while True:
-            input()
-            print('Jsi mrtvý')
+       input()
+       if životy <= 0:
+            while True:
+                print('Jsi mrtvý')
    
     if 'Krimli' in pratele:
        print('Krimli navrhuje, že můžete zajít na fotbal')
@@ -909,6 +912,9 @@ def Fritol3(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
            print('Já sním všechno')
            print('Udělali jste si piknik. Snědli jste vředy a udělalo se ti špatně\nŽivoty - 10')
            životy -= 10
+           if životy >= 0:
+               while True:
+                   print('Konec hri, jsi mortvý!')
        else:
            print('Udělali jste si piknik. Přišli vředi a všechno snědli. Máš hlad.')
 
