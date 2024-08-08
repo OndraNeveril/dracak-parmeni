@@ -1,8 +1,8 @@
 Fritol 1
-sila 0
-inteligence 0
-obrana 0
-zivoty 0
-penize 0
-pivo 0
-trava 0
+sila 8
+inteligence 10
+obrana 2
+zivoty 100
+penize 200
+pivo 1
+trava 1
