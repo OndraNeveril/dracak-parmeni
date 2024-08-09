@@ -919,24 +919,19 @@ def Fritol3(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
            print('Udělali jste si piknik. Přišli vředi a všechno snědli. Máš hlad.')
 
     if problem:
-
        if input('To jako že jsem tlustej? To odvoláš!\na) Jsi děsnej špekoun\nb) Ne, nejsi tlustý\n') == 'b':
            print('Tak to máš štěstí.')
            print('Vrátil ses z ptocházky')
            problem = False
 
        else:
-
            print('Tak to odvoláš! Ale nejdřív z tebe vymlátím tvoubduši a ty peníze, co mi dlužíš za nastřelení těch modrých očí.')
-
            if input('a) Nasaď si ringouše, uteč!\nb) Nikdy se nevzdávej, bojuj až do konce. Banzai!\n') == 'b':
                vyjimka, síla, obrana, životy = boj(vyjimka, síla, obrana, životy, 15, 10,5, 0)
                print('Bobromil ti dal pokoj')
-
            else:
                print('Nasadil sis ringouše a utekl Bobromilovi.')
            print('Potkal jsi Paragona, řekl ti čéče')
-
            if input('a) Neříkej mi čéče, zní to úchylně\nb) Čau\n') == 'a':
                print('inteligence + 1')
                inteligence += 1
@@ -947,13 +942,11 @@ def Fritol3(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
                else:
                    print('No proto')
            print('Přiběhli sem vředi a zaútočili na vás.')
-
            if input('a) Uteč\nb) Boj!\n') == 'b':
                vyjimka, síla, obrana, životy = boj(vyjimka, síla, obrana, životy, 100, 10, 10000, 0.001)
            print('Podařilo se ti utéct.')
        
     if problem:
-
         print('Utíkáš pryč od vředů k řece.')
         if "Plíšek" in pratele and "Pepin" in pratele:
             if input('Potkal jsi Plíška s Pepinem a říkají ti, ať jdeš za nimi, že mají jídlo\na) Ne, nemám čas, jdu pryč\nb) Rychle, vemte jídlo s sebou, spěcháme\n') == 'b':
@@ -974,7 +967,7 @@ def Fritol3(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
     if inteligence >= 20:
        print('Roztavil jsi ringiuše, vydělal sis na hulení\npeníze + 1000')
        peníze += 1000
-   
+
     print('KONEC')
     print('...')
     print('síla: ', síla)
