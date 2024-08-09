@@ -68,11 +68,11 @@ if postava == 'Smajdalf':
     import Smajdalf
     if tah == 1:
 
-        síla = 8
-        inteligence = 10
-        obrana = 2
-        peníze = 200
-        pivo = 1
+        síla = 6
+        inteligence = 12
+        obrana = 3
+        peníze = 100
+        pivo = 0
         tráva = 1
         životy = 100
         magie = 3
