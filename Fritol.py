@@ -132,7 +132,7 @@ def Fritol1(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
            print("poté jsi šel na Bimbův proslov")
            break
 
-    print('Bimbův proslov byl velkolepý\nVítejte na mé 111. technopárty. Za těch 111 let vás mám všechny plné zuby. Začínáte mě pěkně srát! Ani polovinu z vás neznám jménem, ale i tak vás mám všech po krk.')
+    print('Bimbův proslov byl velkolepý\nVítejte na mé 111. technopárty. Za těch 111 let vás mám všechny plné zuby. Začínáte mě pěkně srát! Ani polovinu z vás neznám jménem, ale i tak vás mám všech po krk.Teď vám musím něco předvést. Učil jsem se to fakt dlouho. Nebude to lepší, než trik se špičatým kloboukem, ale dobře ... bude to fakt bžunda ... Tě péro.\nNajednou Bimbo zmizel.')
     print('Na párty sis ještě nějaký čas užíval a když jsi večer přišel domů, Bimbo byl pryč. Na podlaze ležel jeho prsten a na křesle seděl Šmajdalf')
 
     prstenoverozhodnuti = input('Na co se Šmajdalfa zeptáš?\na) Co tu děláš Šmajdalfe?\nb) Nemáš jointa? Fakt dlouho jsem němel, mám příšerný absťák\nc) Co se děje?\n')

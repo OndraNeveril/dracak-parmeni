@@ -4,8 +4,8 @@ from random import randint
 
 print("------------Načítám balíček Smajdalf----------------")
 
-
 def boj(vyjimka, síla, obrana, životy, magie, utok_nepritele, obrana_nepritele, zivoty_nepritele, moralka_nepritele):
+
     aktualni_zivoty_nepritele = zivoty_nepritele
 
     while True:
@@ -13,25 +13,19 @@ def boj(vyjimka, síla, obrana, životy, magie, utok_nepritele, obrana_nepritele
         aktualni_zivoty_nepritele = aktualni_zivoty_nepritele - síla + obrana_nepritele
 
         if magie > 0:
-            if input(
-                    'Chceš jako bonus k útoku použít bojové kouzlo? Za útok kouzlem je bonusové zranění rovno dvojnásobku tvé inteligence.') == 'ano':
+            if input('Chceš jako bonus k útoku použít bojové kouzlo? Za útok kouzlem je bonusové zranění rovno dvojnásobku tvé inteligence.') == 'ano':
                 aktualni_zivoty_nepritele = aktualni_zivoty_nepritele - 2 * inteligence
                 magie -= 1
 
         if aktualni_zivoty_nepritele <= 0:
-
             print("nepřítel je mrtvý")
-
             break
 
         elif aktualni_zivoty_nepritele / zivoty_nepritele <= moralka_nepritele:
-
             print("nepřítel utekl, vyhrál jsi")
-
             break
 
         else:
-
             životy = životy - utok_nepritele + obrana
 
             if životy <= 0 and vyjimka == False:
@@ -45,7 +39,6 @@ def boj(vyjimka, síla, obrana, životy, magie, utok_nepritele, obrana_nepritele
     if vyjimka == False:
         print("zbylo ti ", životy, 'životů')
     return vyjimka, síla, obrana, životy, magie
-
 
 def Smajdalf1(síla, inteligence, obrana, životy, peníze, okena, tráva, magie, pratele):
     rozhodnuti = input('Jedeš za Bimbem a Fritolem, co budeš cestou dělat?\na) Zpívat si trapnou písničku\nb) budu se soustredit na kouzla\nc) zapálím si čmoudovou trávu (životy + 5, síla - 1)\n')
@@ -149,7 +142,7 @@ def Smajdalf1(síla, inteligence, obrana, životy, peníze, okena, tráva, magie
     if slibeno:
         print('Á, okena\nokena + 1')
         okena += 1
-    input('a) Takže chcete uskutečnit svůj plán?\n')
+    input('a) Takže chceš uskutečnit svůj plán?\n')
     print('Ano. Všechno je již připraveno. Už jsem všecko zařídil.')
     if input('a) No když myslíš, že to bude fungovat...\nb) Fritol něco vyčmuchal.\n') == 'b':
         print('Nesmysl. Je to blbeček,10 let nepřišel na to,|že mu upíjím alpu.')
@@ -157,17 +150,50 @@ def Smajdalf1(síla, inteligence, obrana, životy, peníze, okena, tráva, magie
         print('Asi jo. Asi by šel se mnou, kdybych mu řekl. Myslím, že by taky rád někdy slyšel techno,hardrock...metal..a tak.')
     print('Jsem starý, Šmajdalfe. Vím, že vypadám na 30, ale už 60 let pobírám důchod. Připadám si jako vyžvýkaná žvýkačka. Nebo jako Dvakrát použitý toaleťák. Potřebuju vodvaz. Pořádně velký vodvaz. A nečekám,že se vrátím. Vlastně... ani nehodlám...')
 
+    if tráva >= 1 and input('Bimbo si zapálil trávu. Přidáš se taky?\na) ano\nb) ne\n') == 'a':
+        print('Šmajdalfe, ty jeden vyhulenče, tohle bude památná noc.\ntráva - 1\nsíla - 1\nživoty + 1')
+        tráva -= 1
+        síla -= 1
+        životy += 5
+
+        while True:
+            print("Co budeš dělat na párty?\na) půjdu na Bimbův proslov")
+            if tráva >= 1:
+                print("b) Zkusím čmoudovou trávu -> životy + 5, síla -1")
+            if okena >= 1:
+                print("c) Zkusím okenu -> životy + 5, inteligence - 1")
+            if magie >= 1:
+                print("d) půjdu se podívat na Šmajdalfův trik se špičatým kloboukem")
+            párty = input()
+            if párty == "a":
+                inteligence += 1
+                print("inteligence + 1")
+                break
+            elif párty == "b":
+                tráva -= 1
+                životy += 5
+                síla -= 1
+            elif párty == "c":
+                okena -= 1
+                inteligence -= 1
+                životy += 5
+            elif párty == "d":
+                magie -= 1
+                print("magie - 1\nUdělal jsi trik se špičatým kloboukem")
+
+    print('Bimbův proslov byl velkolepý\nVítejte na mé 111. technopárty. Za těch 111 let vás mám všechny plné zuby. Začínáte mě pěkně srát! Ani polovinu z vás neznám jménem, ale i tak vás mám všech po krk.Teď vám musím něco předvést. Učil jsem se to fakt dlouho. Nebude to lepší, než trik se špičatým kloboukem, ale dobře ... bude to fakt bžunda ... Tě péro.\nNajednou Bimbo zmizel.')
+    if input('Jdeš za Bimbem domů, aby sis s ním promluvil.\na) To bylo opravdu úžasné, krásný trik\nb) Myslíš si, že jsi lepší než já?\n') == 'b':
+        print('Dej pokoj, jsi starý, nejsi lepší než já.')
+
     print('Hra byla uložena. Pokud chceš opustit hru, napiš Exit, jinak zadej cokoli jiného')
 
     return síla, inteligence, obrana, životy, peníze, okena, tráva, magie, pratele
-
 
 def Smajdalf2(síla, inteligence, obrana, životy, peníze, okena, tráva, magie, pratele):
     print('Lála je nejlepší!')
     print('Hra byla uložena. Pokud chceš opustit hru, napiš Exit, jinak zadej cokoli jiného')
 
     return síla, inteligence, obrana, životy, peníze, okena, tráva, magie, pratele
-
 
 def Smajdalf3(síla, inteligence, obrana, životy, peníze, okena, tráva, magie, pratele):
     print('Já nemám čas!!!')
