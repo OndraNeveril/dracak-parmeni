@@ -1,6 +1,9 @@
 file = open("save.txt")
-
-hra = input("a) načíst hru\nb) spustit novou hru\n")
+hra = None
+while True:
+    hra = input("a) načíst hru\nb) spustit novou hru\nc) ukončit hru\n")
+    if (hra == 'a' or hra == 'b' or hra == 'c'):
+        break
 
 if hra == 'b':
     postava = input('Vítej v dračím doupěti s tematikou Pár pařmenů. Vyber si postavu:\nFritol - inteligence 10, síla 8, obrana 2, životy 100, peníze 200, vybavení - čmoudová tráva, pivo\nŠmajdalf - inteligence 12, síla 6, obrana 3, životy 150, peníze 50, vybavení - špičatý kloubouk, čmoudová tráva, hůl\nBimbo - inteligence 10, síla 5, obrana 3, životy 100, peníze 500, vybavení - pivo, ringouš, okena, čmoudová tráva\n')
@@ -52,6 +55,7 @@ if postava == 'Fritol':
         tráva = 1
         životy = 100
         pratele = []
+        magie = 0
 
         síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele = Fritol.Fritol1(síla, inteligence, obrana, životy, peníze, pivo, tráva,pratele)
         if input() != 'Exit':
@@ -65,7 +69,7 @@ if postava == 'Fritol':
     tah += 1
 
 if postava == 'Smajdalf':
-    import Smajdalf
+    import smajdalf
     if tah == 1:
 
         síla = 6
@@ -78,15 +82,15 @@ if postava == 'Smajdalf':
         magie = 3
         pratele = []
 
-        síla, inteligence, obrana, životy, peníze, pivo, tráva,magie, pratele = Smajdalf.Smajdalf1(síla, inteligence, obrana, životy, peníze, pivo, tráva,magie, pratele)
+        síla, inteligence, obrana, životy, peníze, pivo, tráva,magie, pratele = smajdalf.Smajdalf1(síla, inteligence, obrana, životy, peníze, pivo, tráva,magie, pratele)
         if input() != 'Exit':
             tah += 1
     if tah == 2:
-        síla, inteligence, obrana, životy, peníze, pivo, tráva,magie, pratele = Smajdalf.Smajdalf2(síla, inteligence, obrana, životy, peníze, pivo, tráva,magie, pratele)
+        síla, inteligence, obrana, životy, peníze, pivo, tráva,magie, pratele = smajdalf.Smajdalf2(síla, inteligence, obrana, životy, peníze, pivo, tráva,magie, pratele)
         if input() != 'Exit':
             tah += 1
     if tah == 3:
-        síla, inteligence, obrana, životy, peníze, pivo, tráva,magie, pratele = Smajdalf.Smajdalf3(síla, inteligence, obrana, životy, peníze, pivo, tráva,magie, pratele)
+        síla, inteligence, obrana, životy, peníze, pivo, tráva,magie, pratele = smajdalf.Smajdalf3(síla, inteligence, obrana, životy, peníze, pivo, tráva,magie, pratele)
     tah += 1
 
 if postava == 'Bimbo':
@@ -120,5 +124,4 @@ fileout.write('\ntrava' + ' ' + str(tráva))
 fileout.write('\nmagie' + ' ' + str(magie) + "\n")
 for i in pratele:
     fileout.write(i + " ")
-print('Nyní hru můžete vypnout stisknutím klávesy enter')
-input()
+input('Nyní hru můžete vypnout stisknutím klávesy enter')
