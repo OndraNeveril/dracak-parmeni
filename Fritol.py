@@ -1,9 +1,11 @@
 from random import randint
+import time
 
 print("------------Načítám balíček Fritol----------------")
 
 def boj(vyjimka, síla, obrana, životy, utok_nepritele, obrana_nepritele, zivoty_nepritele, moralka_nepritele):
     aktualni_zivoty_nepritele = zivoty_nepritele
+
     while True:
         aktualni_zivoty_nepritele = aktualni_zivoty_nepritele - síla + obrana_nepritele
         if aktualni_zivoty_nepritele <= 0:
@@ -13,18 +15,24 @@ def boj(vyjimka, síla, obrana, životy, utok_nepritele, obrana_nepritele, zivot
             print("nepřítel utekl, vyhrál jsi")
             break
         else:
+
             životy = životy - utok_nepritele + obrana
             if životy <= 0 and vyjimka == False:
-                while True:
-                    print("Jsi mrtvý. Konec hry")
+                print("Jsi mrtvý. Konec hry")
+                exit()
             if životy <= 0 and vyjimka == True:
                 input()
-                #for i in range(10000000):
-                    #print('Jsi mrtvý, konec hry?')
+                t = time.time()
+                print('Jsi mrtvý, konec hry?')
+                while time.time() - t < 60:
+                    pass
                 break
+
     if vyjimka == False:
         print("zbylo ti ", životy, 'životů')
+
     return vyjimka, síla, obrana, životy
+
 def Fritol1(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele):
     vyjimka = False
 
@@ -36,6 +44,7 @@ def Fritol1(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
        if input("Jak se má to tlustý prase?\na) Bimbo chystá fakt hustou párty. Sezval už polovinu Krajíce. Ale jak znáš Bimba, udělá z toho ilegální technopárty\nb) Je fakt na šrot, něco chystá\n") == "a":
            print("Tak to už se těším.\nsíla + 1")
            síla = síla + 1
+
            if input("Co mu odpovíš?\na) Uvidíme se na té pařbě\nb) Šmajdalfe, kde jsi koupil ten skvělý vohoz a špičatý kolobouk\n") == "b":
                print("To víš, sleduju nejnovější módní trendy. Třeba trencle Adidas mi vydržely už 2000 let a to jsem je ani jednou nevyměnil\ninteligence + 1")
                inteligence = inteligence + 1
@@ -50,6 +59,7 @@ def Fritol1(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
            if input("Co mu odpovíš?\na) Uvidíme se na té pařbě\nb) Šmajdalfe, kde jsi koupil ten skvělý vohoz a špičatý kolobouk\n") == "b":
                print("To víš, sleduju nejnovější módní trendy. Třeba trencle Adidas mi vydržely už 2000 let a to jsem je ani jednou nevyměnil\ninteligence + 1")
                inteligence = inteligence + 1
+
                if input("Co odpovíš?\na) Teda, to jsem nevěděl, že jsi takové prase\nb) Tak se uvidíme na té pařbe\n") == "a":
                    print("Mlč, nebo tě skopu\nŠmajdalf tě skopal, životy - 5")
                    životy = životy - 5
@@ -58,9 +68,11 @@ def Fritol1(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
     elif prvni_rozhodnuti == "b":
        print("Magič se nikdy nefláká Fritole Šourku. Jestli se to někomu nelíbí, ať mi klobouk políbí\ninteligence + 1")
        inteligence = inteligence + 1
+
        if input("A co ty, slyšel jsem, že jsi pořádný pařmen\na) Bude v nejbližší době nějaká pařba? Vyprávěj mi o všem\nb) Bimbo chystá fakt hustou párty. Sezval už polovinu Krajíce. Ale jak znáš Bimba, udělá z toho ilegální technopárty\n" ) == "b":
            print("Tak to už se těším.\nsíla + 1")
            síla = síla + 1
+
            if input("Co mu odpovíš?\na) Uvidíme se na té pařbě\nb) Šmajdalfe, kde jsi koupil ten skvělý vohoz a špičatý kolobouk\n") == "b":
                print("To víš, sleduju nejnovější módní trendy. Třeba trencle Adidas mi vydržely už 2000 let a to jsem je ani jednou nevyměnil\ninteligence + 1")
                inteligence = inteligence + 1
@@ -75,6 +87,7 @@ def Fritol1(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
            if input("Jak se má to tlustý prase?\na) Bimbo chystá fakt hustou párty. Sezval už polovinu Krajíce. Ale jak znáš Bimba, udělá z toho ilegální technopárty\nb) Je fakt na šrot, něco chystá\n") == "a":
                print("Tak to už se těším.\nsíla + 1")
                síla = síla + 1
+
                if input("Co mu odpovíš?\na) Uvidíme se na té pařbě\nb) Šmajdalfe, kde jsi koupil ten skvělý vohoz a špičatý kolobouk\n") == "b":
                    print("To víš, sleduju nejnovější módní trendy. Třeba trencle Adidas mi vydržely už 2000 let a to jsem je ani jednou nevyměnil\ninteligence + 1")
                    inteligence = inteligence + 1
@@ -102,19 +115,24 @@ def Fritol1(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
        if pivo >= 1:
            print("c) Zkusím pivo -> životy + 5, inteligence - 1")
        print("d) půjdu se podívat na Šmajdalfův trik se špičatým kloboukem")
+
        párty = input()
+
        if párty == "a":
            inteligence += 1
            print("inteligence + 1")
            break
+
        elif párty == "b":
            tráva -= 1
            životy += 5
            síla -= 1
+
        elif párty == "c":
            pivo -= 1
            inteligence -= 1
            životy += 5
+
        elif párty == "d":
            print("Šel jsi se podívat na trik se špičatým kloboukem. Bylo to opravdové umění, ne ty moderní sračky jako picaso. Plelmír Bramborák a Pervitin Dal ale odpálili obří rachejtli, která letí Bimbovým směrem. Musíš ho varovat!")
            if inteligence >= 10:
@@ -126,6 +144,7 @@ def Fritol1(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
            if input() == "a":
                print("podařilo se ti Bimba včas zachránit\nobrana + 1")
                obrana += 1
+
            else:
                print("Bimbo se včas sklonil a rachejtle ho minula, ale stihl ti vynadat\nJseš úplnej výmaz, nebo nepoznáš motýla?\ninteligence - 1")
                inteligence -= 1
@@ -155,13 +174,14 @@ def Fritol1(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
            inteligence -= 1
 
     if input("Šmajdalf si na tebe po 17 letech opět vzpomněl a tak přijel.\nBafiky baf, nesežrals to?\na) Jasně, včera\nb) Co to meleš?\n") == "a":
-       while True:
-           print("Sežral jsi rongouše, nemáš vstupenku, prohrál jsi")
+       print("Sežral jsi rongouše, nemáš vstupenku, prohrál jsi")
+       exit()
     else:
        print("obrana + 1")
        obrana += 1
     print('Šmajdalf natáhne ruku a řekne:"ruku Fritole, červené kolečko na dlani je cool". Podáš mu prsten, on ho hodí do ohně. Zeptáš se ho, jestli je zhulený, ale on se tě zeptá, co vidíš')
     print("co mu odpovíš:\na) hovno, hovno tu je\nb) Také klikyháky")
+
     if inteligence >= 12:
        print("c) taková básnička")
     else:
@@ -207,7 +227,6 @@ def Fritol1(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
        inteligence -= 1
 
     print('Můj milý chobote, ty ho ale vůbec neznáš. Za jeden týden vypil sto tupláků piva a pak všude pobíhal jako radioaktivní rybička.')
-   
     print("V tom za oknem uslyšíš zvuk. Je to Slimsněd Chrupavka a chce jít s tebou na pařbu. Prý slyšel veselou básničku, ale neví, co jeto garáž. Co mu na to řekneš?\na) pojď se mnou\nb) tebe nechci")
 
     if inteligence >= 14:
@@ -297,8 +316,8 @@ def Fritol1(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
        životy -= 10
        if životy >= 0:
            input()
-           while True:
-               print('Umřel jsi, konec hry!')
+           print('Umřel jsi, konec hry!')
+           exit()
 
     else:
        print('pomalu sejdete dolů rovnou na cestu.')
@@ -351,8 +370,10 @@ def Fritol1(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
            cesta = input('Nevšiml si  vás.\nBigbeaťákovi jste utekli. Můžete se odplížit a odejít oklikou, ale cesta vám bude trvat o hodně déle. Potom napiš oklika. Nebo můžeš riskovat rychlejší cestu při nebezpečí, že vás Bigbeaťák dožene. Taky by jich mohlo být více. Potom napiš krátká\n')
      
     if cesta == 'oklika':
-       for i in range(100000000):
-           print('dlouha cesta trva moc dlouho')
+        t = time.time()
+        print('dlouhá cesta trvá moc dlouho')
+        while time.time() - t < 90:
+            pass
        
     else:
        if randint(1,3) == 1 or síla + inteligence >= 25:
@@ -381,13 +402,13 @@ def Fritol1(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
       print('Přišel jsi správně.\ninteligence + 1')
       inteligence += 1
     else:
-      for i in range(1,500000):
-          print('Jdeš do špatné hospody, trvá ti, než ti dojde, že jsi špatně a jdeš k Šílené krávě')
-          
+        t = time.time()
+        print('Jdeš do špatné hospody, trvá ti, než ti dojde, že jsi špatně a jdeš k Šílené krávě')
+        while time.time() - t < 30:
+          pass
+
     print('Došel jsi do pajzlu U Šílené krávy. ')
-
     print('Hra byla uložena. Pokud chceš opustit hru, napiš Exit, jinak zadej cokoli jiného')
-
     return síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele
     
 def Fritol2(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele):
@@ -400,20 +421,18 @@ def Fritol2(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
 
 
     print('Slyšíš, jak k tobě promlouvá čip')
-
-    o = True
     a = 0
 
-    while o:
+    while True:
        if input('Pivo\n') == 'pivo':
            a += 1
        else:
-           o = False
+           break
        
        if a == 4:
            pivo += 1
            print('Pivo + 1')
-           o = False
+           break
        
     if a >= 1 and 'Plíšek' in pratele and 'Pepin' in pratele:
        print('Plíšek se vykecává s ostatními hosty. Tak pivo? Tamtomu ho nechtěli načepovat. Prý mu ještě nebylo osmnáct. Poldové mu ani nedovolí sedět vpředu na koni')
@@ -434,7 +453,6 @@ def Fritol2(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
        while True:
        
            if peníze >= 25:
-   
                nákup = input('Co si koupíš?\na) pivo\nb) trávu\nc) nic\n')
    
                if nákup == 'a':
@@ -449,67 +467,53 @@ def Fritol2(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
        
                elif nákup == 'c' or peníze <= 24:
                     break
-               
-           else: break
+
+           else:
+               break
                
     print('máš', tráva, 'trávy a ', pivo,'piva a ', peníze, 'peněz')
 
-
     while True:
-   
        if 'Šmajdalf' in pratele:
            print('Co budeš dělat v hospodě?\na) Zeptám se Šmajdalfa, co je zač ten maňas v koutě, který mě pozoruje')
        else:
            print("Co budeš dělat v hospodě?\na) Zeptám se hospodského, co je zač ten maňas v koutě, který mě pozoruje")
 
        if tráva >= 1:
-
            print("b) Zkusím čmoudovou trávu -> životy + 5, síla -1")
 
        if pivo >= 1:
-
            print("c) Zkusím pivo -> životy + 5, inteligence - 1")
 
        párty = input()
-
        if párty == "a":
-
            break
 
        elif párty == "b":
-
            tráva -= 1
-
            životy += 5
-
            síla -= 1
 
        elif párty == "c":
-
            pivo -= 1
-
            inteligence -= 1
-
            životy += 5
+
     if 'Šmajdalf'  in pratele:
        print('To je Chodník, Paragon, velký pařmen. Pojď se k němu připojit, stejně nás ještě není devět')
    
     else:
-   
        print('Dědku, co je zač ten maňas v koutě. Vypadá jako hobitofil. Hostinský odpovídá. Je od celníků. Tady mu říkáme Chodník. Prý hledá nějakého agenta 007')
-
        print('Chodník za tebou přijde a řekne Čauky hošku, já jsem velký hodný hobitofil\na) půjdeš s ním dobrovolně nahoru do jeho pokoje\nb) řekneš mu ať táhne pryč')
    
        if input() == 'b':
            print('Odtáhne pryč, ale řekne ti, že to byla chyba')
            print()
-   
            print('V noci na vaši hospodu zaútočí vyhulové. Ty ani nikdo z tvých přátel to nečekal. Najsou si váš pokoj, zabijí vás ve spánku a seberou ti vstupenku.')
    
            input()
-   
-           while True:
-               print('Zatímco jsi mrtvý, Vyhulové si užívají na party')
+           print('Zatímco jsi mrtvý, Vyhulové si užívají na party')
+           exit()
        
        print('Protože toto je slušná hra, nebude zde uvedeno, k čemu všemu došlo mezi chobotem a hobitofilem, když byli sami a nikdo je neviděl')
    
@@ -603,6 +607,7 @@ def Fritol2(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
     elif rozhodnuti == 'c':
        print('To máš říct Šmajdalfovi, ne mě. Cítím chybu v Matrixu. Zřejmě byl změněn, a s ním i scénář.\ninteligence - 1')
        inteligence -= 1
+
     print('Bimbo ti ukáže knihu, kterou napsal. Vaříme s konopím, kuchařka chobota Bimba Šourka. "Tam ti mají takové plantáže a oni vymysleku tolik způsobů, jak ho dělat k kuřatům, divočákům, hodným nekromantům a dokonce i k mořským plodům."')
     if input('a) Jů, omalovánka\nb) Hezká kniha\n') == 'a':
        print('Rád jsem omalovával, když jsi dělal mapy. Když jsem se pal v patnácti rozhodoval, co dál dělat, barvičky pro mě byla jasná volba. A pak jsem začal pařit.')
@@ -615,34 +620,24 @@ def Fritol2(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
                pratele.remove('Slim')
            
     while True:
-           
         print("Co budeš dělat v Rohlence?\na) Půjdu na schůzi pro odvykání závidlosti na drsné hudbě")
         if tráva >= 1:
            print('b) Zkusím čmoudovou trávu -> životy + 5, síla -1')
         if pivo >= 1:
-
            print("c) Zkusím pivo -> životy + 5, inteligence - 1")
 
         párty = input()
-
         if párty == "a":
-
             break
 
         elif párty == "b":
-
            tráva -= 1
-
            životy += 5
-
            síla -= 1
 
         elif párty == "c":
-
            pivo -= 1
-
            inteligence -= 1
-
            životy += 5
 
     if 'Slim' in pratele and 'Plíšek' in pratele and 'Pepin' in pratele:
@@ -650,39 +645,47 @@ def Fritol2(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
         pratele.append('Slim')
         pratele.append('Pepin')
         pratele.append('Plíšek')
+
     elif 'Slim' in pratele:
         pratele.clear()
         pratele.append('Slim')
+
     elif 'Plíšek' in pratele and 'Pepin' in pratele:
         pratele.clear()
         pratele.append('Pepin')
         pratele.append('Plíšek')
+
     else:
         pratele.clear()
+
     print('Hra byla uložena. Pokud chceš opustit hru, napiš Exit, jinak zadej cokoli jiného')
 
     return síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele
     
 def Fritol3(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele):
     vyjimka = False
+
     print('Vítejte na dvanácté jubilejní schůzi pro odvykání závislosti na drsné hudbě.')
     rozhodnuti = input('Fritole, dej sem to rádio.\na) Jistě Elbonde\nb) Je moje a jen moje\nc) Jaké rádio, to je prsten\n')
     if rozhodnuti == 'b':
        síla += 1
        print('síla + 1\nPo delším přemlouvání nakonec rádio vydáš')
+
     elif rozhodnuti == 'c':
        print('inteligence + 1\nTo je jedno, dej mi ho.')
        inteligence += 1
+
     print('Předložíš rádio. "Toto je vstupenka na pařbu v Nádoru pro devět lidí. Tento multifunkční tentonons dává devíti z vás jedinečnou příležitostzúčadtnit se největší pařby století."')
     print('"V Naadoru už jsem párkrát pařil. Měli tam takhle velký a dobrý jednohubky. Bylo na nich úplné všecko. Marinovaná vředí očička, vrlcí chlupaťoučcí slimáci. Určitě půjdu."')
     print('"Když půjdeš ty, tak já taky". "Kdo nevstane do tří sekund, tomu na místě ukousnu hlavu!" "Mně nikdo hlavu kousat nebude, protože mám moc hezké vousy". Spustí se hádka')
     rozhodnuti = input('a) Běžte si na pařbu sami. Já si chci nechat svou hlavu\nb) Já půjdu. Ale bojím se vás\nc) To radši prodám vstupenku Bigbeaťákům\n')
+
     if rozhodnuti == 'c':
-       while True:
-           print('Prodal jsi vtupenku Bigbeaťákům. Peníze +100.\nNešel jsi na pařbu a ostatní si užívali bez tebe.')
+       print('Prodal jsi vtupenku Bigbeaťákům. Peníze +100.\nNešel jsi na pařbu a ostatní si užívali bez tebe.')
+       exit()
     elif rozhodnuti == 'a':
-       while True:
-           print('Nešel jsi  na pařbu a ostatní si užívali bez tebe')
+       print('Nešel jsi  na pařbu a ostatní si užívali bez tebe')
+       exit()
     else:
        print('Ostatní se na tebe otočí')
     if input('Šmajdalf říká: "Jsem rád, že mě vezmeš s sebou. Nebo snad ne?"\na) Jistě\nb) Nevezmu tě\n') == 'a':
@@ -742,8 +745,8 @@ def Fritol3(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
        životy -= 10
        input()
        if životy <= 0:
-            while True:
-                print('Jsi mrtvý')
+            print('Jsi mrtvý')
+            exit()
    
     if 'Krimli' in pratele:
        print('Krimli navrhuje, že můžete zajít na fotbal')
@@ -766,12 +769,7 @@ def Fritol3(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
     if aktivita == 'pařba':
        print('Jdete rovnou na pařbu, až dojdete do lesa')
     elif aktivita == 'stouni':
-       print('Na koncertu stounů jste si pořádně užili.')
-       print("I can't get no satisfaction")
-       print("I can't get no satisfaction")
-       print("'Cause I try, and I try, and I try, and I try")
-       print("I can't get no, I can't get no")
-       print('...')
+       print("Na koncertu stounů jste si pořádně užili.\nI can't get no satisfaction\nI can't get no satisfaction\nCause I try, and I try, and I try, and I try\nI can't get no, I can't get no\n...")
        print('Potom jdete na pařbu, dokud nedojdete do lesa')
 
     elif aktivita == 'fotbal':
@@ -955,6 +953,7 @@ def Fritol3(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
                 print('Opustíš Plíška a Pepina')
                 pratele.remove("Plíšek")
                 pratele.remove("Pepin")
+
         print('Nasedneš do lodičky.')
         if "Slim" in pratele:
             if input('Potkáš Slima a říká ti ať neutíkáš, že pojede s tebou\na) Odprejskni, plav pryč\nb) Pojď sem má lásko\n') == 'b':
@@ -974,6 +973,7 @@ def Fritol3(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
     print('inteligence: ', inteligence )
     print('peníze: ', peníze)
     print('Zbylo ti ', životy, ' životů')
+
     print('Až na pařbu s tebou došli:')
     if "Slim" in pratele:
        print('Slim')

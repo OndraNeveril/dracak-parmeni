@@ -1,4 +1,4 @@
-Pro spuštění hry otevřete soubor main.py, ostatní python soubory jsou dodatečné knihovny pro jednotlivé postavy a stačí stáhnou ty, za které chcete hrát. Aktuálně je na výběr jen Fritol, Šmajdalf a Bimbo jsou pouze rozpracované soubory, později přibudou i další, například Paragon.
+Pro spuštění hry otevřete soubor main.py, ostatní python soubory jsou dodatečné knihovny pro jednotlivé postavy a stačí stáhnou ty, za které chcete hrát. Aktuálně je na výběr jen Fritol, Šmajdalf je v průběhu tvorby, později přibudou i ostatní postavy, jako dalšího plánuji vydat Bilba, ale jeho program nic nedělá.
 
 Hrajte podle své intuice, hra většinou zadá otázku a odpovězte tk, jak by podle vás vaše postava měla odpovědět.
 Může se stát, že v průběhu hry něco zkazíte (většinou ztratíte prsten nebo umřete), potom vám nezbývá nic jiného, než začít od úplného začátku.

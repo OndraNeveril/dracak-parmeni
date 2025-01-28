@@ -1,8 +1,12 @@
 file = open("save.txt")
 hra = None
 while True:
-    hra = input("a) načíst hru\nb) spustit novou hru\nc) ukončit hru\n")
-    if (hra == 'a' or hra == 'b' or hra == 'c'):
+    hra = input("a) načíst hru\nb) spustit novou hru\nc) ukončit hru\nd) achievementy\n")
+    if hra == 'c':
+        exit()
+    if hra == 'd':
+        print('Zatím žádné nejsou')
+    if (hra == 'a' or hra == 'b'):
         break
 
 if hra == 'b':
