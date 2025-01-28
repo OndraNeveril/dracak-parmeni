@@ -1,4 +1,5 @@
-Pro spuštění hry otevřete soubor main.py, ostatní python soubory jsou dodatečné knihovny pro jednotlivé postavy a stačí stáhnou ty, za které chcete hrát. Aktuálně je na výběr jen Fritol, Šmajdalf je v průběhu tvorby, později přibudou i ostatní postavy, jako dalšího plánuji vydat Bilba, ale jeho program nic nedělá.
+Pro spuštění hry otevřete soubor main.py, ostatní python soubory jsou dodatečné knihovny pro jednotlivé postavy a stačí stáhnou ty, za které chcete hrát. Aktuálně je na výběr jen Fritol, Šmajdalf je v průběhu tvorby, později přibudou i ostatní postavy, jako dalšího plánuji vydat Bimba, ale jeho program nic nedělá. 
+Hra je aktuálně dostupná pouze jako zdrojový kód v pythonu. To je dáno tím, že hra je stále be vývoji a tak je jednodušší s každou změnou zveřejnit jen nový kód. Výhodou je, že mě můžete upozornit na případné chyby, nevýhodou je náročné spouštění. Pokud nemáte instalovaný python, můžete vyzkoušet nějaký online interpreter, nebo se pokusit soubor převézt na spustitelnou aplikaci. V budoucnu se objeví i tady.
 
 Hrajte podle své intuice, hra většinou zadá otázku a odpovězte tk, jak by podle vás vaše postava měla odpovědět.
 Může se stát, že v průběhu hry něco zkazíte (většinou ztratíte prsten nebo umřete), potom vám nezbývá nic jiného, než začít od úplného začátku.
