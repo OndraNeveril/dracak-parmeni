@@ -4,6 +4,7 @@ import time
 print("------------Načítám balíček Fritol----------------")
 
 def boj(vyjimka, síla, obrana, životy, utok_nepritele, obrana_nepritele, zivoty_nepritele, moralka_nepritele):
+    pocatecni = životy
     aktualni_zivoty_nepritele = zivoty_nepritele
 
     while True:
@@ -24,6 +25,7 @@ def boj(vyjimka, síla, obrana, životy, utok_nepritele, obrana_nepritele, zivot
                 input()
                 t = time.time()
                 print('Jsi mrtvý, konec hry?')
+                životy = pocatecni
                 while time.time() - t < 60:
                     pass
                 break
@@ -396,7 +398,7 @@ def Fritol1(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
        else:
            síla += 1
            print('síla + 1')
-    print('Nebijte mě, ó velectěný. Prý tu obcházejí čtyři pajzlové bez vousů. Kdybyste je vidělo, dejte mi vědět. Opatrnosti není nikdy nazbyt.')
+    print('Nebijte mě, ó velectěný. Prý tu obcházejí čtyři pajzlové bez vousů. Kdybyste je viděli, dejte mi vědět. Opatrnosti není nikdy nazbyt.')
 
     if input('kam půjdeš?\na) hospoda U Skákavého poníka\nb) pajzl U Šílené krávy\n') == 'b':
       print('Přišel jsi správně.\ninteligence + 1')
@@ -444,8 +446,8 @@ def Fritol2(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
 
     peníze -= p
 
-    print(' Utratil jsi', p, 'Zbylo ti', peníze)
-    print('máš', tráva, 'trávy a ', pivo,'piva')
+    print('Utratil jsi', p, 'Zbylo ti', peníze)
+    print('Máš', tráva, 'trávy a ', pivo,'piva')
 
     if peníze >= 25:
        print('Zbyly ti ještě nějaké peníze, můžeš si koupit pivo nebo trávu, každé stojí 25')
@@ -456,12 +458,12 @@ def Fritol2(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
                nákup = input('Co si koupíš?\na) pivo\nb) trávu\nc) nic\n')
    
                if nákup == 'a':
-                   print('Pivo + 1\nPeníze - 20')
+                   print('Pivo + 1\nPeníze - 25')
                    pivo += 1
                    peníze -= 25
        
                elif nákup == 'b':
-                   print('Tráva + 1\nPeníze - 20')
+                   print('Tráva + 1\nPeníze - 25')
                    tráva += 1
                    peníze -= 25
        

@@ -92,14 +92,14 @@ def Smajdalf1(síla, inteligence, obrana, životy, peníze, okena, tráva, magie
     skopano = False
     if input('a) Tak to by tě zajímalo?\nb) To víš, sleduji nejnovější trendy. Třeba trencle adidas mi vydržely už 2000 let a to jsem je ani jednou nevyměnil, prostě fakt doporučuji.\n') == 'b':
         print('Teda to jsem nevěděl, že jsi takové prase.')
-    if input('a) Nech toho prosím\nb) Mlč, nebo tě skopu\n') == 'b':
-        print('Skopal jsi Fritola')
-        skopano = True
-        print('síla + 1')
-        síla += 1
-    else:
-        print('síla - 1')
-        síla -= 1
+        if input('a) Nech toho prosím\nb) Mlč, nebo tě skopu\n') == 'b':
+            print('Skopal jsi Fritola')
+            skopano = True
+            print('síla + 1')
+            síla += 1
+        else:
+            print('síla - 1')
+            síla -= 1
     if not skopano:
         if input('Běží za vámi děcka a volají "Šmajdalfe, Šmajdalfe, udělej trik se špičatým kloboukem!\na) udělám trik se špičatým kloboukem\nb) Parchanti jedni usoplení!\n') == 'a':
             print('Udělal jsi trik se špičatým kloboukem.')
@@ -121,12 +121,15 @@ def Smajdalf1(síla, inteligence, obrana, životy, peníze, okena, tráva, magie
             magie += 1
         else:
             input('To je jedno, už mám dost všech těch známých, z každé pařby mi uděla retropárty. Táhni pryč!\n')
-            while True:
-                print('Prohrál jsi')
+            print('Prohrál jsi')
+            input()
+            exit()
 
     if input('Bimbo ti otevřel dveře. "Hnusný počasí Šmajdalfe, ty jeden pařmene."\na) Tobě taky ty tlustý prase. Vůbec ses nezměnil.\nb) Že já jsem sem jel, ty mi za to nestojíš! Tě péro.\n') != 'a':
-        while True:
-            print('Odjel jsi pryč, prohràl jsi!')
+        print('Odjel jsi pryč, prohràl jsi!')
+        input()
+        exit()
+
     slibeno = False
     if input('"Dáš si líh, nebo něco ostřejšího? Mám ještě několik lahví zkvašených slimáků. Opravdu dobrý ročník. Skoro tak chlupatí jako já.Nakládal je ještě můj táta.Jsou velcí asi jako prasopes, dáš si?"\na) Jen okenu, díky.\nb) A trávu bys neměl?\n') == 'b':
         print('To víš že jo, mám sotva pro sebe')
