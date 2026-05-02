@@ -131,11 +131,11 @@ def Smajdalf1(síla, inteligence, obrana, životy, peníze, okena, tráva, magie
         exit()
 
     slibeno = False
-    if input('"Dáš si líh, nebo něco ostřejšího? Mám ještě několik lahví zkvašených slimáků. Opravdu dobrý ročník. Skoro tak chlupatí jako já.Nakládal je ještě můj táta.Jsou velcí asi jako prasopes, dáš si?"\na) Jen okenu, díky.\nb) A trávu bys neměl?\n') == 'b':
+    if input('"Dáš si líh, nebo něco ostřejšího? Mám ještě několik lahví zkvašených slimáků. Opravdu dobrý ročník. Jsou koro tak chlupatí jako já. Nakládal je ještě můj táta. Jsou velcí asi jako prasopes, dáš si?"\na) Jen okenu, díky.\nb) A trávu bys neměl?\n') == 'b':
         print('To víš že jo, mám sotva pro sebe')
     else:
         slibeno = True
-    if input('Jak se těšíš na to mejdlo? Bude to fakt smažba. Fritol sehnal od kamaráda nový repráky. Ilegální velikost. Bude to fakt hukot.\nSlíbils mi ten trik se špičatým kloboukem.\nNic tu nemám všechno sežral Fritol...\nNebo ne? Žáby, žáby... tady někde byly žáby...Usmažím ti pár žab, kdybys...\na) Tak já ti teda předvedu trik se špičatým kloboukem\nb) Jen okenu, díky.\n') == 'a':
+    if input('Jak se těšíš na to mejdlo? Bude to fakt smažba. Fritol sehnal od kamaráda nový repráky. Ilegální velikost. Bude to fakt hukot.\nSlíbils mi ten trik se špičatým kloboukem.\nNic tu nemám všechno sežral, ten Fritol...\nNebo ne? Žáby, žáby... tady někde byly žáby... Usmažím ti pár žab, kdybys...\na) Tak já ti teda předvedu trik se špičatým kloboukem\nb) Jen okenu, díky.\n') == 'a':
         print('Udělal jsi trik se špičatým kloboukem.')
         magie -= 1
     else:
@@ -159,30 +159,31 @@ def Smajdalf1(síla, inteligence, obrana, životy, peníze, okena, tráva, magie
         síla -= 1
         životy += 5
 
-        while True:
-            print("Co budeš dělat na párty?\na) půjdu na Bimbův proslov")
-            if tráva >= 1:
-                print("b) Zkusím čmoudovou trávu -> životy + 5, síla -1")
-            if okena >= 1:
-                print("c) Zkusím okenu -> životy + 5, inteligence - 1")
-            if magie >= 1:
-                print("d) půjdu se podívat na Šmajdalfův trik se špičatým kloboukem")
-            párty = input()
-            if párty == "a":
-                inteligence += 1
-                print("inteligence + 1")
-                break
-            elif párty == "b":
-                tráva -= 1
-                životy += 5
-                síla -= 1
-            elif párty == "c":
-                okena -= 1
-                inteligence -= 1
-                životy += 5
-            elif párty == "d":
-                magie -= 1
-                print("magie - 1\nUdělal jsi trik se špičatým kloboukem")
+    while True:
+        print("Co budeš dělat na párty?\na) Půjdu na Bimbův proslov")
+        if tráva >= 1:
+            print("b) Zkusím čmoudovou trávu -> životy + 5, síla -1")
+        if okena >= 1:
+            print("c) Dám si okenu -> životy + 5, inteligence - 1")
+        if magie >= 1:
+            print("d) Udělám trik se špičatým kloboukem")
+        párty = input()
+        if párty == "a":
+            inteligence += 1
+            print("inteligence + 1")
+            break
+        elif párty == "b":
+            tráva -= 1
+            životy += 5
+            síla -= 1
+        elif párty == "c":
+            okena -= 1
+            inteligence -= 1
+            životy += 5
+        elif párty == "d":
+            magie -= 1
+            print("magie - 1\nUdělal jsi trik se špičatým kloboukem")
+            break
 
     print('Bimbův proslov byl velkolepý\nVítejte na mé 111. technopárty. Za těch 111 let vás mám všechny plné zuby. Začínáte mě pěkně srát! Ani polovinu z vás neznám jménem, ale i tak vás mám všech po krk.Teď vám musím něco předvést. Učil jsem se to fakt dlouho. Nebude to lepší, než trik se špičatým kloboukem, ale dobře ... bude to fakt bžunda ... Tě péro.\nNajednou Bimbo zmizel.')
     if input('Jdeš za Bimbem domů, aby sis s ním promluvil.\na) To bylo opravdu úžasné, krásný trik\nb) Myslíš si, že jsi lepší než já?\n') == 'b':
@@ -200,7 +201,7 @@ def Smajdalf2(síla, inteligence, obrana, životy, peníze, okena, tráva, magie
 
 def Smajdalf3(síla, inteligence, obrana, životy, peníze, okena, tráva, magie, pratele):
     print('Já nemám čas!!!')
-    print('KONEC')
+    print('\nKONEC')
     print('...')
     print('síla: ', síla)
     print('inteligence: ', inteligence)
