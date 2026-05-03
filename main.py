@@ -1,41 +1,35 @@
-achievements = open("achievementy.txt")
+import achievementy
 hra = None
-achs = []
 konec = False
+achs = []
 
 while True:
-    hra = input("a) načíst hru\nb) spustit novou hru\nc) ukončit hru\nd) achievementy\n")
+    hra = input("\nVyber si:\na) načíst hru\nb) spustit novou hru\nc) ukončit hru\nd) achievementy\n")
 
     if hra == "c":
         break
 
     if hra == 'd':
-        if achs == []:
-            achs = [line.strip().split(":") for line in achievements]
-        typ = input("a) Odemčené\nb) Všechny\n")
-        if typ == "a":
-            for i in achs:
-                if i[1] == "1":
-                    print(i[0])
-        if typ == "b":
-            for i in achs:
-                if i[1] == "1":
-                    print(i[0], "- odemčen")
-                else:
-                    print(i[0], "- uzamčen")
+        print()
+        achs = achievementy.get_all()
+        for i in achs:
+            cislo, jmeno, popis, hodnota = i
+            if hodnota == 0:
+                print(f"{jmeno} -- Uzamčený")
+            else:
+                print(f"{jmeno} -- {popis}")
 
     if hra == 'b':
         postava = input('Vítej v dračím doupěti s tematikou Pár pařmenů. Vyber si postavu:\nFritol - inteligence 10, síla 8, obrana 2, životy 100, peníze 200, vybavení - čmoudová tráva, pivo\nŠmajdalf - inteligence 12, síla 6, obrana 3, životy 150, peníze 50, vybavení - špičatý kloubouk, čmoudová tráva, hůl (zadej Smajdalf)\n(Bimbo - inteligence 10, síla 5, obrana 3, životy 100, peníze 500, vybavení - pivo, ringouš, okena, čmoudová tráva - nefunguje)\n')
         tah = 1
 
     if hra == "a":
-        file = open("save.txt")
+        file = open("data/save.txt")
         p = []
         for line in file:
             p.append(line.strip())
-        print(p)
         if p == ['0']:
-            print("Chyba, žádná hra uložena není")
+            print("\nChyba, žádná hra uložena není!")
             continue
         else:
             s = p.pop(0).split(' ')
@@ -136,7 +130,7 @@ while True:
             print('Právě jsi dohrál hru Pár Pařmenů, podle stejnojmenného filmu od Bandy trotlů. Tuto hru naprogramoval Ondřej Nevěřil v letech 2022-2026 ve svém volném čase. Pokud se vám hra líbila, šiřte ji dál.\n\n')
             konec = True
 
-        fileout = open("save.txt", "w")
+        fileout = open("data/save.txt", "w")
 
         if konec:
             fileout.write("0")
