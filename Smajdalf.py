@@ -1,11 +1,12 @@
 from random import randint
+import time
 
 # Šmajdalf chlastá místo piva okenu, proměnná pivo tedy bude mít v tomto modulu lokální název okena, globálně se ale jedná stále o pivo
 
 print("------------Načítám balíček Smajdalf----------------")
 
 def boj(vyjimka, síla, obrana, životy, magie, utok_nepritele, obrana_nepritele, zivoty_nepritele, moralka_nepritele):
-
+    pocatecni = životy
     aktualni_zivoty_nepritele = zivoty_nepritele
 
     while True:
@@ -33,8 +34,11 @@ def boj(vyjimka, síla, obrana, životy, magie, utok_nepritele, obrana_nepritele
                     print("Jsi mrtvý. Konec hry")
             if životy <= 0 and vyjimka == True:
                 input()
-                for i in range(10000000):
-                    print('Jsi mrtvý, konec hry?')
+                t = time.time()
+                print('Jsi mrtvý, konec hry?')
+                životy = pocatecni
+                while time.time() - t < 60:
+                    pass
                 break
     if vyjimka == False:
         print("zbylo ti ", životy, 'životů')

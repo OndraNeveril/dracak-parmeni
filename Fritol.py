@@ -1,6 +1,8 @@
 from random import randint
 import time
 
+import achievementy
+
 print("------------Načítám balíček Fritol----------------")
 
 def boj(vyjimka, síla, obrana, životy, utok_nepritele, obrana_nepritele, zivoty_nepritele, moralka_nepritele):
@@ -417,10 +419,10 @@ def Fritol2(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
     vyjimka = False
     print('Došel jsi do pajzlu U Šílené krávy. ')
     if input ('Teda pánové, takovéhle ksichty jsem tu ještě neviděl. Nabízíme služby všeho druhu pane?\na) Fritol Šourek\nb) Bond. James Bond\n') == 'b':
-       if input('a) Dám si pivo. Protřepat, nemíchat\nb) Dám si kofolu\n') == 'a':
-           if input('Bylo ti už osmnáct, smrade?\na) ano\nb) ještě ne\n') == 'a':
-               print('Nemáš u sebe nějaké doklady? Jsme slušný pajzl, nechceme mít problémy')
-
+        if input('a) Dám si pivo. Protřepat, nemíchat\nb) Dám si kofolu\n') == 'a':
+            if input('Bylo ti už osmnáct, smrade?\na) ano\nb) ještě ne\n') == 'a':
+                print('Nemáš u sebe nějaké doklady? Jsme slušný pajzl, nechceme mít problémy')
+                achievementy.update_value(2, 1)
 
     print('Slyšíš, jak k tobě promlouvá čip')
     a = 0
@@ -819,7 +821,8 @@ def Fritol3(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
            
            print('Do místnosti najrdnou vtrhlo mnoho skřetů a jeden obr. Spustí se boj a obr zaútočí přímo na tebe')
            vyjimka = True
-           vyjimka, síla, obrana, životy = boj(vyjimka, síla, obrana, životy, 25, 5, 300, 0.3)
+           vyjimka, síla
+           a, obrana, životy = boj(vyjimka, síla, obrana, životy, 25, 5, 300, 0.3)
            print('Podle scénáře máš být už dávno mrtvý. Tohle přežívaní si pro příště odpustíš.')
            print('Pokračujete, až dojdete k můstku, cestou vás začne pronásledovat rothodčí, bramborg.')
            print('Šmajdalf s ním začal bojovat a používal svoje nejmocnější kouzla\nNemám čas!\nTahne ti z kotle\nTeď na tebe sešlu těžkou válečnou světlušku verze 2.8.1 s upgradem\nJá nemám čas!!!')
@@ -844,14 +847,12 @@ def Fritol3(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
     print('Došli jste do lesa plného Zwelfů.\nNěco tady smrdí. Že bych to byl já? Ne, já to být nemohu, včera jsme se myli, že drahá.\nAno, myli. Naštestí je tady Ariel pro všechny. Skočte si do naší společné pračky, zapíná se přesně v osm hodin\nA potom zbav se těch smraďochů, Fríťo voňavý.')
 
     while True:
-           
         print("Co budeš dělat v lese?\na) Půjdu do společné pračky")
         if tráva >= 1:
            print('b) Zkusím čmoudovou trávu -> životy + 5, síla -1')
         if pivo >= 1:
             print("c) Zkusím pivo -> životy + 5, inteligence - 1")
         print('d) Půjdu spát')
-
         párty = input()
 
         if párty == 'a':
@@ -913,8 +914,9 @@ def Fritol3(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
            print('Udělali jste si piknik. Snědli jste vředy a udělalo se ti špatně\nŽivoty - 10')
            životy -= 10
            if životy >= 0:
-               while True:
-                   print('Konec hry, jsi mortvý!')
+               print('Konec hry, jsi mrtvý!')
+               input()
+               exit()
        else:
            print('Udělali jste si piknik. Přišli vředi a všechno snědli. Máš hlad.')
 
@@ -999,4 +1001,5 @@ def Fritol3(síla, inteligence, obrana, životy, peníze, pivo, tráva, pratele)
     if "Chlup" in pratele:
        print('Chlup')
 
+    achievementy.update_value(1, 1)
     return 0, 0, 0, 0, 0, 0, 0, [] 

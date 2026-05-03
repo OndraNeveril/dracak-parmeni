@@ -3,6 +3,7 @@ hra = None
 konec = False
 achs = []
 
+print('Vítej ve hře inspirované filmem Pár pařmenů, společenstvo žlutého tentononcu s pěknou básničkou uvnitř.')
 while True:
     hra = input("\nVyber si:\na) načíst hru\nb) spustit novou hru\nc) ukončit hru\nd) achievementy\n")
 

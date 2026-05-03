@@ -1,8 +1,8 @@
-Pro spuštění hry otevřete soubor main.py, ostatní python soubory jsou dodatečné knihovny pro jednotlivé postavy a stačí stáhnou ty, za které chcete hrát. Aktuálně je na výběr jen Fritol, Šmajdalf je v průběhu tvorby, později přibudou i ostatní postavy, jako dalšího plánuji vydat Bimba, ale jeho program nic nedělá. 
+Pro spuštění hry otevřete soubor main.py, ostatní python soubory jsou dodatečné knihovny pro jednotlivé postavy a stačí stáhnou ty, za které chcete hrát. Aktuálně je na výběr jen Fritol, Šmajdalf je v průběhu tvorby, později přibudou i ostatní postavy, jako dalšího plánuji vydat Bimba, ale jeho program zatím nic nedělá.
+
 Hra je aktuálně dostupná pouze jako zdrojový kód v pythonu. To je dáno tím, že hra je stále be vývoji a tak je jednodušší s každou změnou zveřejnit jen nový kód. Výhodou je, že mě můžete upozornit na případné chyby, nevýhodou je náročné spouštění. Pokud nemáte instalovaný python, můžete vyzkoušet nějaký online interpreter, nebo se pokusit soubor převézt na spustitelnou aplikaci. V budoucnu se objeví i tady.
 
-Hrajte podle své intuice, hra většinou zadá otázku a odpovězte tk, jak by podle vás vaše postava měla odpovědět.
-Může se stát, že v průběhu hry něco zkazíte (většinou ztratíte prsten nebo umřete), potom vám nezbývá nic jiného, než začít od úplného začátku.
+Hrajte podle své intuice, hra většinou zadá otázku a odpovězte tak, jak by podle vás vaše postava měla odpovědět. Může se stát, že v průběhu hry něco zkazíte (většinou ztratíte prsten nebo umřete), potom vám nezbývá nic jiného, než začít od posledně uloženého místa. (Hra se ukládá automaticky po dosažení určitého milníku, ve hře jsou typicky 2 až 3.)
 Ne vždy však hned poznáte, jestli je konec hry, neboť na několika místech hra budete vypadat, že jste mrtví, nebo že jste něco zkazili, ale může se to ještě spravit (maximálně do čtvrt hodiny poznáte, jestli jste mrtví).
 Hru nevypínejte v průběhu, můžete přijít o uložený obsah. Pokud vám hra napíše, že byla uložena, vypněte ji podle pokynů hry.
 
